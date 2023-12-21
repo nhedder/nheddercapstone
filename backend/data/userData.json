@@ -1,0 +1,355 @@
+{
+"users":[
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "password": "password123",
+      "skillId": 17
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "password": "securePass456",
+      "skillId": 29
+    },
+    {
+      "firstName": "Michael",
+      "lastName": "Johnson",
+      "email": "michael.johnson@example.com",
+      "password": "pass123word",
+      "skillId": 9
+    },
+    {
+      "firstName": "Emily",
+      "lastName": "Williams",
+      "email": "emily.williams@example.com",
+      "password": "p@ssword789",
+      "skillId": 38
+    },
+    {
+      "firstName": "Christopher",
+      "lastName": "Brown",
+      "email": "chris.brown@example.com",
+      "password": "brownie567",
+      "skillId": 14
+    },
+    {
+      "firstName": "Amanda",
+      "lastName": "Davis",
+      "email": "amanda.davis@example.com",
+      "password": "amandaPass",
+      "skillId": 23
+    },
+    {
+      "firstName": "Daniel",
+      "lastName": "Martinez",
+      "email": "daniel.martinez@example.com",
+      "password": "danielPass123",
+      "skillId": 5
+    },
+    {
+      "firstName": "Olivia",
+      "lastName": "Taylor",
+      "email": "olivia.taylor@example.com",
+      "password": "taylorPass",
+      "skillId": 32
+    },
+    {
+      "firstName": "William",
+      "lastName": "Anderson",
+      "email": "will.anderson@example.com",
+      "password": "will123pass",
+      "skillId": 20
+    },
+    {
+      "firstName": "Sophia",
+      "lastName": "Thomas",
+      "email": "sophia.thomas@example.com",
+      "password": "thomasPass456",
+      "skillId": 7
+    },
+    {
+      "firstName": "Ethan",
+      "lastName": "Hernandez",
+      "email": "ethan.hernandez@example.com",
+      "password": "ethan456Pass",
+      "skillId": 36
+    },
+    {
+      "firstName": "Isabella",
+      "lastName": "Moore",
+      "email": "isabella.moore@example.com",
+      "password": "isabella789",
+      "skillId": 12
+    },
+    {
+      "firstName": "James",
+      "lastName": "Walker",
+      "email": "james.walker@example.com",
+      "password": "walker123Pass",
+      "skillId": 27
+    },
+    {
+      "firstName": "Emma",
+      "lastName": "Perez",
+      "email": "emma.perez@example.com",
+      "password": "perezPass789",
+      "skillId": 3
+    },
+    {
+      "firstName": "Liam",
+      "lastName": "Hall",
+      "email": "liam.hall@example.com",
+      "password": "liam456Pass",
+      "skillId": 19
+    },
+    {
+      "firstName": "Mia",
+      "lastName": "Young",
+      "email": "mia.young@example.com",
+      "password": "miaPass123",
+      "skillId": 34
+    },
+    {
+      "firstName": "Benjamin",
+      "lastName": "Garcia",
+      "email": "benjamin.garcia@example.com",
+      "password": "benjamin456",
+      "skillId": 8
+    },
+    {
+      "firstName": "Ava",
+      "lastName": "Turner",
+      "email": "ava.turner@example.com",
+      "password": "turnerPass789",
+      "skillId": 25
+    },
+    {
+      "firstName": "Logan",
+      "lastName": "Russell",
+      "email": "logan.russell@example.com",
+      "password": "loganPass123",
+      "skillId": 30
+    },
+    {
+      "firstName": "Sofia",
+      "lastName": "Cooper",
+      "email": "sofia.cooper@example.com",
+      "password": "sofia789Pass",
+      "skillId": 16
+    }
+  ]
+  , 
+  "skills": [
+    {
+      "skillName": "Home Repair",
+      "description": "Fixing and maintaining common household issues such as plumbing, electrical, and carpentry.",
+      "category": "Maintenance"
+    },
+    {
+      "skillName": "Auto Mechanics",
+      "description": "Performing basic and intermediate automotive repairs and maintenance.",
+      "category": "Automotive"
+    },
+    {
+      "skillName": "Gardening",
+      "description": "Cultivating plants, flowers, and vegetables, including soil preparation and pest control.",
+      "category": "Outdoor"
+    },
+    {
+      "skillName": "Cooking",
+      "description": "Preparing delicious and nutritious meals with various culinary techniques.",
+      "category": "Culinary"
+    },
+    {
+      "skillName": "Bicycle Maintenance",
+      "description": "Repairing and maintaining bicycles for optimal performance and safety.",
+      "category": "Outdoor"
+    },
+    {
+      "skillName": "Basic Plumbing",
+      "description": "Fixing common plumbing issues such as leaks, clogs, and pipe repairs.",
+      "category": "Maintenance"
+    },
+    {
+      "skillName": "Tutoring in Music",
+      "description": "Providing guidance and support for learning and playing musical instruments.",
+      "category": "Education"
+    },
+    {
+      "skillName": "Landscaping",
+      "description": "Designing and maintaining outdoor spaces, including planting, trimming, and lawn care.",
+      "category": "Outdoor"
+    },
+    {
+      "skillName": "Digital Photography",
+      "description": "Capturing high-quality photographs using digital cameras and editing software.",
+      "category": "Creative Arts"
+    },
+    {
+      "skillName": "DIY Home Decor",
+      "description": "Creating and implementing do-it-yourself home decor projects.",
+      "category": "Crafts"
+    },
+    {
+      "skillName": "Basic Electrical Work",
+      "description": "Performing simple electrical tasks such as installing fixtures and outlets.",
+      "category": "Maintenance"
+    },
+    {
+      "skillName": "Personal Finance Management",
+      "description": "Budgeting, saving, and managing personal finances effectively.",
+      "category": "Finance"
+    },
+    {
+      "skillName": "Time Management",
+      "description": "Effectively organizing and prioritizing tasks to maximize productivity.",
+      "category": "Personal Development"
+    },
+    {
+      "skillName": "First Aid and CPR",
+      "description": "Providing immediate medical assistance in emergency situations.",
+      "category": "Health and Safety"
+    },
+    {
+      "skillName": "Pet Care",
+      "description": "Caring for and meeting the needs of pets, including feeding and grooming.",
+      "category": "Animal Care"
+    },
+    {
+      "skillName": "Advanced Sewing",
+      "description": "Mending and sewing simple clothing repairs and alterations.",
+      "category": "Crafts"
+    },
+    {
+      "skillName": "Effective Communication",
+      "description": "Conveying ideas clearly and actively listening to others.",
+      "category": "Communication"
+    },
+    {
+      "skillName": "Public Speaking",
+      "description": "Confidently delivering speeches and presentations to an audience.",
+      "category": "Communication"
+    },
+    {
+      "skillName": "Child Care",
+      "description": "Providing quality care and supervision for children of various ages.",
+      "category": "Parenting"
+    },
+    {
+      "skillName": "Organizing and Decluttering",
+      "description": "Efficiently organizing spaces and reducing clutter for a tidy environment.",
+      "category": "Home Management"
+    },
+    {
+      "skillName": "Basic Computer Maintenance",
+      "description": "Performing routine computer maintenance tasks, including software updates and virus scans.",
+      "category": "Technology"
+    },
+    {
+      "skillName": "Fitness Training",
+      "description": "Guiding individuals in effective workout routines and fitness activities.",
+      "category": "Fitness"
+    },
+    {
+      "skillName": "Language Tutoring",
+      "description": "Assisting others in learning and improving proficiency in a new language.",
+      "category": "Education"
+    },
+    {
+      "skillName": "Resume Writing",
+      "description": "Crafting professional and compelling resumes for job applications.",
+      "category": "Career Development"
+    },
+    {
+      "skillName": "Basic Car Maintenance",
+      "description": "Performing routine car maintenance tasks, including oil changes and tire rotations.",
+      "category": "Automotive"
+    },
+    {
+      "skillName": "Yoga Instruction",
+      "description": "Guiding individuals through yoga poses and relaxation techniques.",
+      "category": "Fitness"
+    },
+    {
+      "skillName": "Digital Marketing",
+      "description": "Promoting products or services through digital channels.",
+      "category": "Marketing"
+    },
+    {
+      "skillName": "Basic Carpentry",
+      "description": "Executing simple carpentry tasks such as building shelves or repairing furniture.",
+      "category": "Maintenance"
+    },
+    {
+      "skillName": "Social Media Management",
+      "description": "Creating and curating content for social media platforms to engage an audience.",
+      "category": "Marketing"
+    },
+    {
+      "skillName": "Interior Design",
+      "description": "Planning and arranging interior spaces for aesthetic and functional purposes.",
+      "category": "Design"
+    },
+    {
+      "skillName": "Outdoor Survival Skills",
+      "description": "Developing skills for survival in outdoor and wilderness environments.",
+      "category": "Outdoor"
+    },
+    {
+      "skillName": "Basic Painting",
+      "description": "Applying paint to walls and surfaces with precision and neatness.",
+      "category": "Crafts"
+    },
+    {
+      "skillName": "Conflict Resolution",
+      "description": "Resolving disputes and conflicts in a fair and effective manner.",
+      "category": "Communication"
+    },
+    {
+      "skillName": "Storytelling",
+      "description": "Crafting and delivering engaging narratives for various audiences.",
+      "category": "Creative Arts"
+    },
+    {
+      "skillName": "Stress Management",
+      "description": "Implementing techniques to cope with and reduce stress.",
+      "category": "Personal Development"
+    },
+    {
+      "skillName": "Basic Home Security",
+      "description": "Implementing measures to enhance home security and prevent burglaries.",
+      "category": "Safety"
+    },
+    {
+      "skillName": "Basic Plumbing",
+      "description": "Fixing common plumbing issues such as leaks, clogs, and pipe repairs.",
+      "category": "Maintenance"
+    },
+    {
+      "skillName": "Resume Writing",
+      "description": "Crafting professional and compelling resumes for job applications.",
+      "category": "Career Development"
+    },
+    {
+      "skillName": "Outdoor Cooking",
+      "description": "Cooking meals using outdoor methods such as grilling or campfire cooking.",
+      "category": "Culinary"
+    },
+    {
+      "skillName": "Basic Sewing",
+      "description": "Mending and sewing simple clothing repairs and alterations.",
+      "category": "Crafts"
+    },
+    {
+      "skillName": "DIY Home Decor",
+      "description": "Creating and implementing do-it-yourself home decor projects.",
+      "category": "Crafts"
+    }
+  ]
+  
+    
+  
+}
