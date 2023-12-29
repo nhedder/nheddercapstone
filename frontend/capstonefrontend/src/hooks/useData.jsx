@@ -12,7 +12,7 @@ export function useData(url, defaultData = {}) {
         .then((response) => response.json())
         .then((json) => {
           if (!ignore) {
-            setData(json);
+            setData(json.data);
           }
         });
 

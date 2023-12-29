@@ -5,140 +5,160 @@
       "lastName": "Doe",
       "email": "john.doe@example.com",
       "password": "password123",
-      "skillId": 17
+      "skillId": 17,
+      "displayPicture": "https://st3.depositphotos.com/1017228/18878/i/450/depositphotos_188781580-stock-photo-handsome-cheerful-young-man-standing.jpg"
     },
     {
       "firstName": "Jane",
       "lastName": "Smith",
       "email": "jane.smith@example.com",
       "password": "securePass456",
-      "skillId": 29
+      "skillId": 29,
+      "displayPicture": "https://img.freepik.com/free-photo/portrait-dark-skinned-cheerful-woman-with-curly-hair-touches-chin-gently-laughs-happily-enjoys-day-off-feels-happy-enthusiastic-hears-something-positive-wears-casual-blue-turtleneck_273609-43443.jpg"
     },
     {
       "firstName": "Michael",
       "lastName": "Johnson",
       "email": "michael.johnson@example.com",
       "password": "pass123word",
-      "skillId": 9
+      "skillId": 9,
+      "displayPicture": "https://as2.ftcdn.net/v2/jpg/03/67/70/91/1000_F_367709147_W4Q2pRjMcz7jUkuH4e1BIhmtCDceu3FH.jpg"
     },
     {
       "firstName": "Emily",
       "lastName": "Williams",
       "email": "emily.williams@example.com",
       "password": "p@ssword789",
-      "skillId": 38
+      "skillId": 38,
+      "displayPicture": "https://thumbs.dreamstime.com/b/business-person-gesturing-white-background-19126378.jpg"
     },
     {
       "firstName": "Christopher",
       "lastName": "Brown",
       "email": "chris.brown@example.com",
       "password": "brownie567",
-      "skillId": 14
+      "skillId": 14,
+      "displayPicture": "https://assets3.thrillist.com/v1/image/1299823/414x310/crop;webp=auto;jpeg_quality=60;progressive.jpg"
     },
     {
       "firstName": "Amanda",
       "lastName": "Davis",
       "email": "amanda.davis@example.com",
       "password": "amandaPass",
-      "skillId": 23
+      "skillId": 23,
+      "displayPicture": "https://static.demilked.com/wp-content/uploads/2019/04/5cb6d34f775c2-stock-models-share-weirdest-stories-photo-use-102-5cb5c725bc378__700.jpg"
     },
     {
       "firstName": "Daniel",
       "lastName": "Martinez",
       "email": "daniel.martinez@example.com",
       "password": "danielPass123",
-      "skillId": 5
+      "skillId": 5,
+      "displayPicture": "https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg"
     },
     {
       "firstName": "Olivia",
       "lastName": "Taylor",
       "email": "olivia.taylor@example.com",
       "password": "taylorPass",
-      "skillId": 32
+      "skillId": 32,
+      "displayPicture": "https://blog.hootsuite.com/wp-content/uploads/2021/07/free-stock-photos-03-scaled.jpeg"
     },
     {
       "firstName": "William",
       "lastName": "Anderson",
       "email": "will.anderson@example.com",
       "password": "will123pass",
-      "skillId": 20
+      "skillId": 20,
+      "displayPicture": "https://i.pinimg.com/originals/fb/0c/d8/fb0cd89bce0a2568cd12c1af2be34646.jpg"
     },
     {
       "firstName": "Sophia",
       "lastName": "Thomas",
       "email": "sophia.thomas@example.com",
       "password": "thomasPass456",
-      "skillId": 7
+      "skillId": 7,
+      "displayPicture": "https://www.shutterstock.com/shutterstock/photos/2151833739/display_1500/stock-photo-portrait-of-a-young-latin-woman-with-pleasant-smile-and-crossed-arms-isolated-on-grey-wall-with-2151833739.jpg"
     },
     {
       "firstName": "Ethan",
       "lastName": "Hernandez",
       "email": "ethan.hernandez@example.com",
       "password": "ethan456Pass",
-      "skillId": 36
+      "skillId": 36,
+      "displayPicture": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
     },
     {
       "firstName": "Isabella",
       "lastName": "Moore",
       "email": "isabella.moore@example.com",
       "password": "isabella789",
-      "skillId": 12
+      "skillId": 12,
+      "displayPicture": "https://www.shutterstock.com/shutterstock/photos/2122700972/display_1500/stock-photo-image-of-young-asian-woman-company-worker-in-glasses-smiling-and-holding-digital-tablet-standing-2122700972.jpg"
     },
     {
       "firstName": "James",
       "lastName": "Walker",
       "email": "james.walker@example.com",
       "password": "walker123Pass",
-      "skillId": 27
+      "skillId": 27,
+      "displayPicture": "https://t3.ftcdn.net/jpg/02/22/85/16/360_F_222851624_jfoMGbJxwRi5AWGdPgXKSABMnzCQo9RN.jpg"
     },
     {
       "firstName": "Emma",
       "lastName": "Perez",
       "email": "emma.perez@example.com",
       "password": "perezPass789",
-      "skillId": 3
+      "skillId": 3,
+      "displayPicture": "https://img.freepik.com/free-photo/cheerful-dark-skinned-woman-smiling-broadly-rejoicing-her-victory-competition-among-young-writers-standing-isolated-against-grey-wall-people-success-youth-happiness-concept_273609-1246.jpg"
     },
     {
       "firstName": "Liam",
       "lastName": "Hall",
       "email": "liam.hall@example.com",
       "password": "liam456Pass",
-      "skillId": 19
+      "skillId": 19,
+      "displayPicture": "https://www.shutterstock.com/image-photo/portrait-beautiful-mature-blonde-bearded-260nw-721917490.jpg"
     },
     {
       "firstName": "Mia",
       "lastName": "Young",
       "email": "mia.young@example.com",
       "password": "miaPass123",
-      "skillId": 34
+      "skillId": 34,
+      "displayPicture": "https://www.shutterstock.com/image-photo/smiling-middle-aged-african-american-260nw-2099982595.jpg"
     },
     {
       "firstName": "Benjamin",
       "lastName": "Garcia",
       "email": "benjamin.garcia@example.com",
       "password": "benjamin456",
-      "skillId": 8
+      "skillId": 8,
+      "displayPicture": "https://www.shutterstock.com/image-photo/young-brazilian-man-isolated-on-260nw-2242569333.jpg"
     },
     {
       "firstName": "Ava",
       "lastName": "Turner",
       "email": "ava.turner@example.com",
       "password": "turnerPass789",
-      "skillId": 25
+      "skillId": 25,
+      "displayPicture": "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?cs=srgb&dl=pexels-vinicius-wiesehofer-1130626.jpg&fm=jpg"
     },
     {
       "firstName": "Logan",
       "lastName": "Russell",
       "email": "logan.russell@example.com",
       "password": "loganPass123",
-      "skillId": 30
+      "skillId": 30,
+      "displayPicture": "https://expertphotography.b-cdn.net/wp-content/uploads/2019/03/yns-plt-527773-unsplash-1.jpg"
     },
     {
       "firstName": "Sofia",
       "lastName": "Cooper",
       "email": "sofia.cooper@example.com",
       "password": "sofia789Pass",
-      "skillId": 16
+      "skillId": 16,
+      "displayPicture": "https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?cs=srgb&dl=pexels-guilherme-almeida-1858175.jpg&fm=jpg"
     }
   ]
   , 

@@ -1,6 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 import AppRoutes from "./routes/AppRoutes";
+import { CurrentUserProvider } from "./context/CurrentUserContext";
+import Header from "./components/Header";
+import { SearchContext, SearchHolder } from "./context/SearchContext";
+import { SkillProvider } from "./context/SkillContext";
+import { ReviewProvider } from "./context/ReviewContext";
 import { UserProvider } from "./context/UserContext";
 
 function App() {
@@ -17,9 +22,23 @@ function App() {
         src="https://see.fontimg.com/api/renderfont4/gx9W1/eyJyIjoiZnMiLCJoIjoxNjIsInciOjIwMDAsImZzIjo4MSwiZmdjIjoiI0MxM0EzQSIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/U0tJTExZIEJJTExZ/ultramarathondemo.png"
         width="500px"
       />
-      <UserProvider>
-        <AppRoutes />
-      </UserProvider>
+      {/* AppBar */}
+      <div />
+      <div>
+        {/* side menu */}
+        <CurrentUserProvider>
+          <UserProvider>
+            <ReviewProvider>
+              <SkillProvider>
+                <SearchHolder>
+                  <Header />
+                  <AppRoutes />
+                </SearchHolder>
+              </SkillProvider>
+            </ReviewProvider>
+          </UserProvider>
+        </CurrentUserProvider>
+      </div>
     </>
   );
 }

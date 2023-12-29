@@ -38,6 +38,8 @@ const storeUser = async (req, res) => {
 
         password: user.password,
 
+        displayPicture: user.displayPicture,
+
         skillId: user.skillId,
       };
 

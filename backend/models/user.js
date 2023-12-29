@@ -32,6 +32,12 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       required: true,
+
+    },
+    displayPicture:{
+        type: DataTypes.TEXT,
+      allowNull: false,
+      required: true,
     },
     skillId: {
         type: DataTypes.INTEGER, allowNull: true, required: false,

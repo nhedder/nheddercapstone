@@ -13,7 +13,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
-import { useUserContext } from "../context/UserContext";
+import { useCurrentUserContext } from "../context/CurrentUserContext";
 
 function Copyright(props) {
   return (
@@ -43,7 +43,7 @@ export default function MUILoginForm() {
 
   // tracks number of login attempts and boolean if login successful
   const [loginAttempts, setLoginAttempts] = useState(0);
-  const { currentUser, handleUpdateUser } = useUserContext();
+  const { currentUser, handleUpdateUser } = useCurrentUserContext();
 
   const loginOK = currentUser.email; // if there is an email associated with the current user, we know the login worked
 

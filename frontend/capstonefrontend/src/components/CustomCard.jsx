@@ -3,27 +3,34 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { useContext } from "react";
+import { useUserContext } from "../context/UserContext";
 // wraps the default MUI Card component to customise it with props
 export default function CustomCard({
   title,
+  body,
+  userId,
+  userArray,
+  skillId,
   children,
   buttonText = "Yee Haw",
 }) {
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 800 }}>
       <CardActionArea>
-        <CardMedia
+        {/* {image?<CardMedia
           component="img"
           height="140"
           alt="iguana"
-          image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-        />
+          image={image}
+        />:null} */}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {children}
+            {body}
           </Typography>
         </CardContent>
       </CardActionArea>

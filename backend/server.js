@@ -1,8 +1,14 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
-
 require("dotenv").config();
 let dbConnect = require("./dbConnect");
+
+const corsOptions = {
+  origin: "http://localhost:5173"
+};
+app.use(cors(corsOptions));
+
 
 // parse requests of content-type -application/json
 app.use(express.json());
