@@ -20,7 +20,7 @@ Review.init(
       allowNull: false,
       required: true,
       validate: {
-        min: 1,
+        min: 0,
         max: 5,
       }
     },
@@ -32,7 +32,14 @@ Review.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    userId: {
+    initiatorId: {
+      type: DataTypes.INTEGER, allowNull: true, required: false,
+      references: {
+          model: User, //reference to another model
+          key: "id", //column name of the referenced model
+          indexes: [{ unique: true }],
+    }},
+    receiverId: {
       type: DataTypes.INTEGER, allowNull: true, required: false,
       references: {
           model: User, //reference to another model

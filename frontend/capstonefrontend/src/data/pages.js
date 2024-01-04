@@ -8,6 +8,10 @@ export const pages = [
     label: "Skills",
   },
   {
+    link: "/review",
+    label: "Reviews",
+  },
+  {
     link: "/about",
     label: "About Us",
   },
@@ -15,4 +19,5 @@ export const pages = [
     link: "/login",
     label: "Log In",
   },
+  
 ];

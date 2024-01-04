@@ -1,23 +1,33 @@
-
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { NavLink } from 'react-router-dom';
-import { pages } from '../data/pages';
-
-
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import { NavLink } from "react-router-dom";
+import { pages } from "../data/pages";
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import { useState, useContext } from "react";
+import { SearchContext } from "../context/SearchContext";
+import SearchIcon from "@mui/icons-material/Search";
 // see https://mui.com/material-ui/react-app-bar/
 function NavBarMUI() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [textField, setTextField] = useState("");
+  const { setQuery } = useContext(SearchContext);
 
+  const setTheQuery = () => {
+    setQuery(textField);
+    if (textField === "") {
+      window.location.reload();
+    }
+  };
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -27,12 +37,11 @@ function NavBarMUI() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#C13A3A'}}>
+    <AppBar position="static" sx={{ backgroundColor: "#C13A3A" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-
           {/* desktop menu logo and icon */}
-         
+
           <Typography
             variant="h5"
             noWrap
@@ -40,51 +49,53 @@ function NavBarMUI() {
             to="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
-          >
-           
-          </Typography>
+          ></Typography>
 
           {/* mobile menu items in a flexbox */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-                size="large"
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                onClick={handleOpenNavMenu}
-                color="inherit"
-                >
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
               <MenuIcon />
-            </IconButton>            
-            <Menu id="menu-appbar" anchorEl={anchorElNav}
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
-              open={Boolean(anchorElNav)} onClose={handleCloseNavMenu}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.link} component={NavLink} to={page.link}>{page.label}</MenuItem>
+                <MenuItem key={page.link} component={NavLink} to={page.link}>
+                  {page.label}
+                </MenuItem>
               ))}
             </Menu>
           </Box>
 
-         
           <Typography
             variant="h5"
             noWrap
@@ -92,28 +103,47 @@ function NavBarMUI() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
-          >
-          
-          </Typography>
+          ></Typography>
 
           {/* desktop menu items are here, grouped into a flex box */}
-          <Box sx={{ flexGrow: 2, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
             {/* render our menu items as NavLinks to make sure we maintain state */}
             {pages.map((page) => (
-                <MenuItem key={page.link} component={NavLink} to={page.link}>{page.label}</MenuItem>
+              <MenuItem key={page.link} component={NavLink} to={page.link}>
+                {page.label}
+              </MenuItem>
             ))}
           </Box>
 
-          <Box sx={{ flexGrow: 1, justifySelf: 'flex-end', textAlign: 'right' }}>
-                   
+          <Box
+            sx={{ flexGrow: 1, justifySelf: "flex-end", textAlign: "right" }}
+          >
+            <TextField
+              InputLabelProps={{
+                style: {
+                  color: "#fff8eb",
+                  borderColor: "#fff8eb",
+                 
+                },
+              }}
+              sx= {{borderRadius: 5,}}
+              label="search"
+              // variant="filled"
+              type="text"
+              value={textField}
+              onChange={(e) => setTextField(e.target.value)}
+            />
+            <Button id="searchButton" onClick={() => setTheQuery()}>
+              <SearchIcon sx={{ mr: 2, color: "#fff8eb" }} />
+            </Button>
           </Box>
         </Toolbar>
       </Container>

@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import PostsPage, {Post, PostList} from "../pages/PostsPage";
 import ProtectedRoute from "./ProtectedRoutes";
 import LoginPage from "../pages/LoginPage";
+import ReviewsPage, { ReviewList, Review } from "../pages/ReviewsPage";
 
 
 // special component containing all the possible routes for this app
@@ -28,6 +29,13 @@ function AppRoutes(props) {
         {/* dynamic param taken from route, stored in variable called id */}
 
         <Route path=":id" element={<Post />} />
+      </Route>
+
+      <Route path="/review"  element={<ReviewsPage {...props} />}>
+        <Route index element={<ReviewList />} />
+        {/* dynamic param taken from route, stored in variable called id */}
+
+        <Route path=":id" element={<Review />} />
       </Route>
 
       <Route path="/login" element={<LoginPage {...props} />} />

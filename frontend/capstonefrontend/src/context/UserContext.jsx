@@ -1,5 +1,5 @@
 import { useState, useContext, createContext } from "react";
-
+import { useData } from "../hooks/useData";
 // 1. Create the context
 const UserContext = createContext();
 
@@ -8,11 +8,10 @@ const UserContext = createContext();
 export const UserProvider = (props) => {
   // store the current user in state at the top level
   const [users, setUsers] = useState({});
-
+  // const userArray = useData("http://localhost:8080/api/users/", []);
   const handleUpdateUsers = (User) => {
     setUsers(User);
   };
-
 
   // 2. Provide the context.
   // The Provider component of any context (UserContext.Provider)
