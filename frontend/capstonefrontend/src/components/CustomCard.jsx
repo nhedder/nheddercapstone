@@ -19,7 +19,7 @@ export default function CustomCard({
 console.log(userArray)
 const filteredUser= userArray.filter(user=>user.id===userId)
 const reviewedUser= userArray.filter(user=>user.id===receiverId)
-console.log(filteredUser[0])
+console.log(reviewedUser)
   return (
     <Card sx={{ width: 800 }}>
       <CardActionArea>
@@ -35,12 +35,13 @@ console.log(filteredUser[0])
           </Typography>
           <Typography variant="body2" color="text.secondary">
             {body}
-          </Typography>{ reviewedUser?
+          </Typography>
+          { reviewedUser.length > 0?
           <Typography variant="body2" color="text.secondary"sx={{left: 50, position:'absolute', top: 10}}>
            {filteredUser[0].firstName}  {filteredUser[0].lastName} reviewing  {reviewedUser[0].firstName}  {reviewedUser[0].lastName}
-          </Typography>:  
+          </Typography>:
           <Typography variant="body2" color="text.secondary"sx={{left: 50, position:'absolute', top: 10}}>
-           {filteredUser[0].firstName}  {filteredUser[0].lastName} 
+           {filteredUser[0].firstName}  {filteredUser[0].lastName}
           </Typography>}
         </CardContent>
       </CardActionArea>
