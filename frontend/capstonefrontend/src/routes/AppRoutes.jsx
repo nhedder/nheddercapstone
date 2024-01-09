@@ -6,9 +6,10 @@ import { Routes, Route } from "react-router-dom";
 //  import AboutPage from "../pages/AboutPage";
 // import Homepage from "../pages/Homepage";
  import PageNotFound from "../pages/PageNotFound";
+ import PostList from "../components/PostList";
 
 // import MUILoginForm from "../components/MUILogInForm";
-import PostsPage, {Post, PostList} from "../pages/PostsPage";
+import PostsPage from "../pages/PostsPage";
 import ProtectedRoute from "./ProtectedRoutes";
 import LoginPage from "../pages/LoginPage";
 import ReviewsPage, { ReviewList, Review } from "../pages/ReviewsPage";
@@ -28,8 +29,8 @@ function AppRoutes(props) {
         <Route index element={<PostList />} />
         {/* dynamic param taken from route, stored in variable called id */}
 
-        <Route path=":id" element={<Post />} />
-      </Route>
+        {/* <Route path=":id" element={<Post />} />*/}
+</Route> 
 
       <Route path="/review"  element={<ReviewsPage {...props} />}>
         <Route index element={<ReviewList />} />

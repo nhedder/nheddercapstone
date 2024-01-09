@@ -7,6 +7,7 @@ import { SearchContext, SearchHolder } from "./context/SearchContext";
 import { SkillProvider } from "./context/SkillContext";
 import { ReviewProvider } from "./context/ReviewContext";
 import { UserProvider } from "./context/UserContext";
+import { PostsProvider } from "./context/PostsContext";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
       <div>
         {/* side menu */}
         <CurrentUserProvider>
+          <PostsProvider>
           <UserProvider>
             <ReviewProvider>
               <SkillProvider>
@@ -37,6 +39,7 @@ function App() {
               </SkillProvider>
             </ReviewProvider>
           </UserProvider>
+          </PostsProvider>
         </CurrentUserProvider>
       </div>
     </>

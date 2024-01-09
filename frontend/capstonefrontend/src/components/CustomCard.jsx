@@ -16,10 +16,10 @@ export default function CustomCard({
   children,
   buttonText = "Yee Haw",
 }) {
-console.log(userArray)
+
 const filteredUser= userArray.filter(user=>user.id===userId)
 const reviewedUser= userArray.filter(user=>user.id===receiverId)
-console.log(reviewedUser)
+
   return (
     <Card sx={{ width: 800 }}>
       <CardActionArea>
