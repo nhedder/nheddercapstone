@@ -13,6 +13,7 @@ import PostsPage from "../pages/PostsPage";
 import ProtectedRoute from "./ProtectedRoutes";
 import LoginPage from "../pages/LoginPage";
 import ReviewsPage, { ReviewList, Review } from "../pages/ReviewsPage";
+import ChatApp from "../pages/Chat";
 
 
 // special component containing all the possible routes for this app
@@ -20,12 +21,15 @@ import ReviewsPage, { ReviewList, Review } from "../pages/ReviewsPage";
 // child components using {...props}
 function AppRoutes(props) {
   return (
+
+
     <Routes>
       {/* index matches on default/home URL: / */}
 
       {/* nested routes, matches on /dash/tasks etc */}
-
-      <Route path="/post"  element={<PostsPage {...props} />}>
+   <Route path="/chat"  element={<ChatApp {...props} />}/>
+     
+      <Route path="/"  element={<PostsPage {...props} />}>
         <Route index element={<PostList />} />
         {/* dynamic param taken from route, stored in variable called id */}
 

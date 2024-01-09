@@ -3,6 +3,8 @@ const axios = require("axios");
 const Models = require("../models");
 const { Op } = require("sequelize");
 const Controllers = require("../controllers");
+const bcrypt = require('bcryptjs');
+
 
 const storeUser = async (req, res) => {
   try {
@@ -36,7 +38,7 @@ const storeUser = async (req, res) => {
 
         emailId: user.email,
 
-        password: user.password,
+        password: await bcrypt.hash(user.password, 10),
 
         displayPicture: user.displayPicture,
 

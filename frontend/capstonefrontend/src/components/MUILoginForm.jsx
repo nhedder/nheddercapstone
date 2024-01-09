@@ -14,6 +14,9 @@ import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 import { useCurrentUserContext } from "../context/CurrentUserContext";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+
 
 function Copyright(props) {
   return (
@@ -37,19 +40,20 @@ export default function MUILoginForm() {
   // input state values always need to be strings - empty initially
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const navigate= useNavigate();
 
   // new state value for showing submission messages to user
   const [submitResult, setSubmitResult] = useState("");
 
   // tracks number of login attempts and boolean if login successful
   const [loginAttempts, setLoginAttempts] = useState(0);
-  const { currentUser, handleUpdateUser } = useCurrentUserContext();
+  const { currentUser, handleUpdateCurrentUser } = useCurrentUserContext();
 
   const loginOK = currentUser.email; // if there is an email associated with the current user, we know the login worked
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
+    const validate = { emailId: userEmail, password: userPassword };
     // add some password validation
     if (userPassword.length < 5) {
       setSubmitResult("Password must be at least 5 characters long");
@@ -62,7 +66,12 @@ export default function MUILoginForm() {
       setLoginAttempts(loginAttempts + 1);
     } else {
       setSubmitResult("Successful login.");
-      handleUpdateUser({ email: userEmail, password: userPassword }); // set current user object based on successful login form details
+      axios
+        .post("http://localhost:8080/api/users/login", validate)
+        .then(response=>handleUpdateCurrentUser(response.data.data.user))
+        .then(response=>console.log(response.data.data.user))
+        .then(navigate('/')) // set current user object based on successful login form details
+        .catch((err) => console.log(err));
     }
   };
 

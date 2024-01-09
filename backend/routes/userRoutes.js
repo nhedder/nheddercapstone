@@ -10,6 +10,10 @@ router.post("/create", (req, res) => {
   Controllers.userController.createUsers(req.body, res);
 });
 
+router.post("/login", (req, res) => {
+  Controllers.userController.loginUser(req, res);
+});
+
 router.put("/:id", (req, res) => {
   Controllers.userController.updateUser(req, res);
 });

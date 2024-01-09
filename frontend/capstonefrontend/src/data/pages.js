@@ -1,6 +1,6 @@
 export const pages = [
   {
-    link: "/post",
+    link: "/",
     label: "Home",
   },
   {

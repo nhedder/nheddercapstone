@@ -19,19 +19,17 @@ export default function PostList() {
   const postsData =
     query === ""
       ? useData("http://localhost:8080/api/posts/", [])
-      : useData(
-          `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${query}`,
-          []
-        );
+      : useData(`http://localhost:8080/api/posts/`, []);
 
   // the ? means only call map if postsData is not null
   console.log(users);
-  const postList = currentPosts?.map((post, index) =>
+  const postList = postsData?.map((post, index) =>
     // <>
     Array.isArray(users) && users.length !== 0 ? (
       <>
-        <Grid item key={index} xs={6} md={4} lg={3}>
+        <Grid item key={post.id} xs={6} md={4} lg={3}>
           <CustomCard
+            key={post.id}
             title={post.title}
             body={post.body}
             userId={post.userId}
@@ -45,10 +43,8 @@ export default function PostList() {
   );
   return (
     <>
-      {/* <Grid container spacing={2} my={2}>
-        {" "} */}
-        {Array.isArray(postList) ? postList : null}{" "}
-      {/* </Grid> */}
+      {/* <Grid container spacing={2} my={2}> */}{" "}
+      {Array.isArray(postList) ? postList : null} {/* </Grid> */}
     </>
   );
 }

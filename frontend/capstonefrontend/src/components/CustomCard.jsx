@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { useContext } from "react";
 import { useUserContext } from "../context/UserContext";
+import { useNavigate } from "react-router-dom";
 // wraps the default MUI Card component to customise it with props
 export default function CustomCard({
   title,
@@ -14,8 +15,9 @@ export default function CustomCard({
   skillId,
   userArray,
   children,
-  buttonText = "Yee Haw",
+  buttonText = "Chat",
 }) {
+const navigate= useNavigate()
 
 const filteredUser= userArray.filter(user=>user.id===userId)
 const reviewedUser= userArray.filter(user=>user.id===receiverId)
@@ -46,7 +48,7 @@ const reviewedUser= userArray.filter(user=>user.id===receiverId)
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button onClick={()=>navigate('chat', {state:{email:filteredUser[0].emailId,id:filteredUser[0].id}})} size="small" color="primary">
           {buttonText}
         </Button>
       </CardActions>

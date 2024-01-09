@@ -4,5 +4,6 @@ module.exports={
     reviewController: require('./reviewController'),
     skillController: require('./skillController'),
     tradeController: require('./tradeController'),
-    populateController: require('./populateController')
+    populateController: require('./populateController'),
+    chatController: require('./chatController')
     }
