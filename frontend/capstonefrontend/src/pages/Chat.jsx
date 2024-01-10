@@ -16,44 +16,53 @@ function ChatApp() {
   const [newUser, setNewUser] = useState(true);
   const [isChangeName, setChangeName] = useState(false);
   const location= useLocation()
+  
   useEffect(() => {
-    socket.on("chat message", (message) => {
+    socket.on('chat message', (message) => {
       setMessages([...messages, message]);
     });
-    
-   console.log(location.state)
-
-    socket.on("user connected", (user) => {
-      console.log(user);
+    socket.on('user connected', (user) => {
+      console.log(user)
       setOnlineUsers([...onlineUsers, user]);
     });
-
-    socket.on("user disconnected", (user) => {
+    socket.on('user disconnected', (user) => {
       setOnlineUsers([...onlineUsers, user]);
     });
-
     // Clean up the event listeners when the component unmounts.
     return () => {
-      socket.off("chat message");
-      socket.off("user connected");
-      socket.off("user disconnected");
+      socket.off('chat message');
+      socket.off('user connected');
+      socket.off('user disconnected');
     };
   }, [messages, onlineUsers]);
+//   const sendMessage = () => {
+//     const receiver = onlineUsers.filter(user => user.id !== currentUser.id)
+//     axios.post('http://localhost:8063/api/dynamic/create?whatever=Chats',
+//     { message: newMessage, senderID: currentUser.id, receiverID: receiver[0].id})
+//   .then(response => { console.log(response.data.data); })
+//     socket.emit('chat message', newMessage, username);
+//     setNewMessage('');
+//   };
+//   const addUser = () => {
+//     socket.emit('user connected', {username: username, id: currentUser.id});
+//     setNewUser(username);
+//   };
 
   const sendMessage = () => {
+    console.log(onlineUsers)
     
     const receiver = onlineUsers.filter((user) => user.id !== currentUser.id);
     // console.log(receiver)
-    axios
-      .post("http://localhost:8080/api/chat/create", {
-        message: newMessage,
-        senderID: currentUser.id,
-        receiverID: location.state.id===currentUser.id?receiver[0].id:location.state.id
-        // receiverID: location.state.id
-      })
-      .then((response) => {
-        console.log(response.data.data);
-      });
+    // axios
+    //   .post("http://localhost:8080/api/chat/create", {
+    //     message: newMessage,
+    //     senderID: currentUser.id,
+    //     // receiverID: location.state.id===currentUser.id?receiver[0].id:location.state.id
+    //     receiverID: location.state.id
+    //   })
+    //   .then((response) => {
+    //     console.log(response.data.data);
+    //   });
       
     socket.emit("chat message", newMessage, emailId);
     setNewMessage("");
@@ -61,8 +70,16 @@ function ChatApp() {
 
   const addUser = () => {
     setEmailId(currentUser.emailId)
-    console.log(currentUser)
-    socket.emit("user connected", { emailId: currentUser.emailId, id: currentUser.id });
+    console.log(onlineUsers)
+    const filteredUsers=onlineUsers.map(user=>user.emailId).includes(currentUser.emailId)
+    const filtered=onlineUsers.map(user=>user.emailId).includes(location.state.email)
+    // onlineUsers.map(user=>user.emailId).includes(currentUser.emailId)?socket.emit("user connected", { emailId: currentUser.emailId, id: currentUser.id }):null 
+    // filteredUsers?null:socket.emit("user connected", { emailId: currentUser.emailId, id: currentUser.id });
+    // filtered?null:socket.emit("user connected", { emailId: location.state.email, id: location.state.id });
+    if (!filteredUsers){socket.emit("user connected", { emailId: currentUser.emailId, id: currentUser.id })}
+    if (!filtered){socket.emit("user connected", { emailId: location.state.email, id: location.state.id})}
+    console.log('filtered:',filtered)
+    console.log('filteredUsers:', filteredUsers)
     setNewUser(false)
   };
 
