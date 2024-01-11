@@ -30,7 +30,7 @@ Review.init(
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     initiatorId: {
       type: DataTypes.INTEGER, allowNull: true, required: false,

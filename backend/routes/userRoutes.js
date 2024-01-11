@@ -6,6 +6,10 @@ router.get("/", (req, res) => {
   Controllers.userController.getUsers(res);
 });
 
+router.get("/:id", (req, res) => {
+  Controllers.userController.getUser(req,res);
+});
+
 router.post("/create", (req, res) => {
   Controllers.userController.createUsers(req.body, res);
 });

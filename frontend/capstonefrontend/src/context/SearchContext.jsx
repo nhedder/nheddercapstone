@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 
 // This context is getting the user data from the backend and passing it to the components to be used in the components 
 // This is also stored in the cookies so that the user can be logged in and logged out without having to log in again.
@@ -17,3 +17,8 @@ export const SearchHolder = (props) => {
         </SearchContext.Provider>
     );
 }
+// 3. Use the context. This custom hook allows easy access
+// of this particular context from any child component
+export const useSearchContext = () => {
+    return useContext(SearchContext);
+  };

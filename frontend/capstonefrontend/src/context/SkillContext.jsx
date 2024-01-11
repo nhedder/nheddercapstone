@@ -9,13 +9,16 @@ export const SkillProvider = (props) => {
   // store the current Skill in state at the top level
   const [currentSkills, setCurrentSkills] = useState({});
 
+  const handleUpdateSkills = (Skill) => {
+    setCurrentSkills(Skill);
+  };
 
   // 2. Provide the context.
   // The Provider component of any context (SkillContext.Provider)
   // sends data via its value prop to all children at every level.
   // We are sending both the current Skill and an update function
   return (
-    <SkillContext.Provider value={{ currentSkills, setCurrentSkills }}>
+    <SkillContext.Provider value={{ currentSkills, handleUpdateSkills }}>
       {props.children}
     </SkillContext.Provider>
   );

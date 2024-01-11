@@ -2,8 +2,19 @@
 const Models = require("../models");
 const bcrypt = require('bcryptjs')
 const jwt = require("jsonwebtoken"); // CommonJS syntax
+
 const getUsers = (res) => {
   Models.User.findAll({})
+    .then(function (data) {
+      res.send({ result: 200, data: data });
+    })
+    .catch((err) => {
+      throw err;
+    });
+};
+
+const getUser = (req,res) => {
+  Models.User.findAll({where: { id: req.params.id }})
     .then(function (data) {
       res.send({ result: 200, data: data });
     })
@@ -80,5 +91,6 @@ module.exports = {
   createUsers,
   updateUser,
   deleteUser,
-  loginUser
+  loginUser,
+  getUser
 };

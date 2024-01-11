@@ -8,6 +8,7 @@ import { SkillProvider } from "./context/SkillContext";
 import { ReviewProvider } from "./context/ReviewContext";
 import { UserProvider } from "./context/UserContext";
 import { PostsProvider } from "./context/PostsContext";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -35,6 +36,7 @@ function App() {
                 <SearchHolder>
                   <Header />
                   <AppRoutes />
+                  <Footer/>
                 </SearchHolder>
               </SkillProvider>
             </ReviewProvider>

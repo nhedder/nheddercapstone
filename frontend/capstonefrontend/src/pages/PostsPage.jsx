@@ -13,15 +13,18 @@ import { useUserContext } from "../context/UserContext";
 import { useCurrentUserContext } from "../context/CurrentUserContext";
 import CustomCard from "../components/CustomCard";
 import { usePostsContext } from "../context/PostsContext";
+import { useSkillContext } from "../context/SkillContext";
 
 // Define UserContext
 const UserContext = React.createContext();
 
 export default function PostsPage() {
   const { currentPosts, setCurrentPosts } = usePostsContext();
-  const { user: currentUser } = useCurrentUserContext();
+  const { currentUser } = useCurrentUserContext();
   const { handleUpdateUsers } = useUserContext();
+  const { handleUpdateSkills } = useSkillContext();
   const userArray = useData("http://localhost:8080/api/users/", []);
+  const skillData = useData("http://localhost:8080/api/skills/", []);
   const [newPostText, setNewPostText] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -38,7 +41,8 @@ export default function PostsPage() {
     // let PostList= await postsData
     // setCurrentPosts(PostList)
     Array.isArray(userArray) && handleUpdateUsers(userArray);
-  }, [userArray, handleUpdateUsers]);
+    Array.isArray(skillData) && handleUpdateSkills(skillData);
+  }, [userArray, handleUpdateUsers, skillData, handleUpdateSkills]);
 
   const handlePostSubmit = async (e) => {
     let PostList = await postsData;
@@ -56,12 +60,11 @@ export default function PostsPage() {
         body: JSON.stringify({
           title: title,
           body: body,
-          userId: 2,
+          userId: currentUser.id,
         }),
       });
 
       if (response.ok) {
-      
         setCurrentPosts(PostList);
         window.location.reload();
         // Handle successful post creation, maybe update the posts list
