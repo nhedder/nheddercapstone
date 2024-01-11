@@ -18,6 +18,7 @@ import SignUpPage from "../pages/SignUpPage";
 import SkillsPage from "../pages/SkillsPage";
 import ProfilePage from "../pages/ProfilePage";
 import ReviewList from "../components/ReviewList";
+import AboutPage from "../pages/AboutPage";
 
 // special component containing all the possible routes for this app
 // any props passed into AppRoutes will also be passed onto
@@ -29,7 +30,7 @@ function AppRoutes(props) {
 
       {/* nested routes, matches on /dash/tasks etc */}
       <Route path="/chat" element={<ChatApp {...props} />} />
-      <Route path="/profile" element={<ProfilePage {...props} />}/>
+      <Route path="/profile" element={<ProfilePage {...props} />} />
       <Route path="/" element={<PostsPage {...props} />}>
         <Route index element={<PostList />} />
         {/* dynamic param taken from route, stored in variable called id */}
@@ -45,6 +46,7 @@ function AppRoutes(props) {
       </Route>
 
       <Route path="/skills" element={<SkillsPage />} />
+      <Route path="/about" element={<AboutPage />} />
 
       <Route path="/signup" element={<SignUpPage />} />
 
@@ -57,4 +59,3 @@ function AppRoutes(props) {
 }
 
 export default AppRoutes;
-

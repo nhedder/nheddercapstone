@@ -28,13 +28,8 @@ export default function PostsPage() {
   const [newPostText, setNewPostText] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
-  const postsData =
-    // query === ""?
-    useData("http://localhost:8080/api/posts/", []);
-  //   : useData(
-  //       `http://localhost:8080/api/posts/`,
-  //       []
-  // );
+  const postsData = useData("http://localhost:8080/api/posts/", []);
+
   // Update users context when userArray changes
 
   useEffect(() => {

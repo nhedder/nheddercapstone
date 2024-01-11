@@ -131,10 +131,9 @@ function NavBarMUI() {
                 style: {
                   color: "#fff8eb",
                   borderColor: "#fff8eb",
-                 
                 },
               }}
-              sx= {{borderRadius: 5,}}
+              sx={{ borderRadius: 5 }}
               label="search"
               // variant="filled"
               type="text"

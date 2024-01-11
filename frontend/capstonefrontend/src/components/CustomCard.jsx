@@ -12,6 +12,7 @@ export default function CustomCard({
   body,
   userId,
   receiverId,
+  postId,
   rating,
   comment,
   skillArray,
@@ -30,11 +31,9 @@ export default function CustomCard({
     (skill) => skill.id === filteredUser[0].skillId
   );
 
-  const reviewedSkill = rating? skillArray.filter(
-    (skill) => skill.id === reviewedUser[0].skillId
-  ):null;
-
-
+  const reviewedSkill = rating
+    ? skillArray.filter((skill) => skill.id === reviewedUser[0].skillId)
+    : null;
 
   return (
     <Card sx={{ width: 800 }}>
@@ -42,9 +41,10 @@ export default function CustomCard({
         {userId ? (
           <CardMedia
             component="img"
-            height="140"
+            height="200"
             alt="iguana"
             image={filteredUser[0].displayPicture}
+            sx={{ padding: "1em 1em 0 15em", objectFit: "contain" }}
           />
         ) : null}
         <CardContent>
@@ -60,7 +60,7 @@ export default function CustomCard({
           <Typography variant="body2" color="text.secondary">
             {comment}
           </Typography>
-         
+
           {rating ? (
             <>
               <Typography
@@ -72,8 +72,8 @@ export default function CustomCard({
                 {reviewedUser[0].firstName} {reviewedUser[0].lastName}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-            {reviewedSkill[0].skillName}
-          </Typography>
+                {reviewedSkill[0].skillName}
+              </Typography>
             </>
           ) : (
             <>
@@ -85,8 +85,8 @@ export default function CustomCard({
                 {filteredUser[0].firstName} {filteredUser[0].lastName}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-            {filteredSkill[0].skillName}
-          </Typography>
+                {filteredSkill[0].skillName}
+              </Typography>
             </>
           )}
         </CardContent>
@@ -95,7 +95,11 @@ export default function CustomCard({
         <Button
           onClick={() =>
             navigate("chat", {
-              state: { email: filteredUser[0].emailId, id: filteredUser[0].id },
+              state: {
+                email: filteredUser[0].emailId,
+                id: filteredUser[0].id,
+                postId: postId,
+              },
             })
           }
           size="small"

@@ -9,17 +9,22 @@ const CurrentUserContext = createContext();
 export const CurrentUserProvider = (props) => {
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   // store the current CurrentUser in state at the top level
-  const [currentUser, setCurrentUser] = useState(cookies.user ? cookies.user : {});
+  const [currentUser, setCurrentUser] = useState(
+    cookies.user ? cookies.user : {}
+  );
 
   // sets CurrentUser object in state, shared via context
   const handleUpdateCurrentUser = (user) => {
     if (user.emailId) {
-      setCookie("user", JSON.stringify(user), { path: "/", maxAge: 60 * 60 * 24 * 2 });
+      setCookie("user", JSON.stringify(user), {
+        path: "/",
+        maxAge: 60 * 60 * 24 * 2,
+      });
     } else {
       removeCookie("user");
     }
     setCurrentUser(user);
-    console.log(user)
+    console.log(user);
   };
 
   // 2. Provide the context.
@@ -27,7 +32,9 @@ export const CurrentUserProvider = (props) => {
   // sends data via its value prop to all children at every level.
   // We are sending both the current CurrentUser and an update function
   return (
-    <CurrentUserContext.Provider value={{ currentUser, handleUpdateCurrentUser }}>
+    <CurrentUserContext.Provider
+      value={{ currentUser, handleUpdateCurrentUser }}
+    >
       {props.children}
     </CurrentUserContext.Provider>
   );

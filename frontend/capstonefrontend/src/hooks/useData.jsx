@@ -5,13 +5,12 @@ export function useData(url, defaultData = {}) {
   // state variable for holding fetched json data
   const [data, setData] = useState(defaultData);
 
-  useEffect(()  => {
+  useEffect(() => {
     if (url) {
       let ignore = false;
       fetch(url)
         .then((response) => response.json())
         .then((json) => {
-         
           if (!ignore) {
             setData(json.data);
           }

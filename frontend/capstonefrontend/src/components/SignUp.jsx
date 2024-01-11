@@ -1,21 +1,21 @@
 // SignUpPage.jsx
-import React, { useState } from 'react';
-import { TextField, Button } from '@mui/material';
-import FindSkill from './FindSkill';
-import { useSkillContext } from '../context/SkillContext';
+import React, { useState } from "react";
+import { TextField, Button } from "@mui/material";
+import FindSkill from "./FindSkill";
+import { useSkillContext } from "../context/SkillContext";
 
 const SignUp = () => {
-  const[skillId, setSkillId]= useState(null)
+  const [skillId, setSkillId] = useState(null);
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    emailId: '',
-    password: '',
-    displayPicture: '',
-    skillId: skillId, 
+    firstName: "",
+    lastName: "",
+    emailId: "",
+    password: "",
+    displayPicture: "",
+    skillId: skillId,
   });
 
-  const{currentSkills}= useSkillContext();
+  const { currentSkills } = useSkillContext();
 
   const handleInputChange = (e) => {
     setFormData({
@@ -28,23 +28,23 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8080/api/users/create', {
-        method: 'POST',
+      const response = await fetch("http://localhost:8080/api/users/create", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
         // Handle successful signup, such as redirecting to login page
-        console.log('User registered successfully!');
+        console.log("User registered successfully!");
       } else {
         // Handle signup error
-        console.error('Failed to register user');
+        console.error("Failed to register user");
       }
     } catch (error) {
-      console.error('Error during signup:', error.message);
+      console.error("Error during signup:", error.message);
     }
   };
 
@@ -59,7 +59,8 @@ const SignUp = () => {
           value={formData.firstName}
           onChange={handleInputChange}
           required
-        /><br/>
+        />
+        <br />
         <TextField
           type="text"
           label="Last Name"
@@ -67,7 +68,8 @@ const SignUp = () => {
           value={formData.lastName}
           onChange={handleInputChange}
           required
-        /><br/>
+        />
+        <br />
         <TextField
           type="email"
           label="Email"
@@ -75,7 +77,8 @@ const SignUp = () => {
           value={formData.emailId}
           onChange={handleInputChange}
           required
-        /><br/>
+        />
+        <br />
         <TextField
           type="password"
           label="Password"
@@ -83,7 +86,8 @@ const SignUp = () => {
           value={formData.password}
           onChange={handleInputChange}
           required
-        /><br/>
+        />
+        <br />
         <TextField
           type="text"
           label="Display Picture URL"
@@ -91,17 +95,13 @@ const SignUp = () => {
           value={formData.displayPicture}
           onChange={handleInputChange}
           required
-        /><br/>
-        {/* <TextField
-          type="number"
-          label="Skill ID (optional)"
-          name="skillId"
-          value={formData.skillId || ''}
-          onChange={handleInputChange}
-        /><br/> */}
-         {Array.isArray(currentSkills) ? (
-        <FindSkill skills={currentSkills} setSkillId={setSkillId} />
-      ) : null}<br/>
+        />
+        <br />
+
+        {Array.isArray(currentSkills) ? (
+          <FindSkill skills={currentSkills} setSkillId={setSkillId} />
+        ) : null}
+        <br />
         <Button type="submit" variant="contained" color="primary">
           Sign Up
         </Button>

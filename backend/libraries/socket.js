@@ -11,7 +11,7 @@ const initializeSocket = (server) => {
   io.on('connection', (socket) => {
     console.log(socket.id,'A user connected');
 
-    socket.on('chat message', (message, user) => {
+    socket.on('chat message', (message, user) => { console.log(message)
       // Broadcast the message to all connected clients
       io.emit('chat message',user+': '+ message);
     });

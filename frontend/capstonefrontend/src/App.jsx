@@ -12,7 +12,7 @@ import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
-  //https://media3.giphy.com/media/9WfkIiuzx3dWcTVfRy/giphy.gif
+  
   return (
     <>
       <img
@@ -24,23 +24,22 @@ function App() {
         src="https://see.fontimg.com/api/renderfont4/gx9W1/eyJyIjoiZnMiLCJoIjoxNjIsInciOjIwMDAsImZzIjo4MSwiZmdjIjoiI0MxM0EzQSIsImJnYyI6IiNGRkZGRkYiLCJ0IjoxfQ/U0tJTExZIEJJTExZ/ultramarathondemo.png"
         width="500px"
       />
-      {/* AppBar */}
+
       <div />
       <div>
-        {/* side menu */}
         <CurrentUserProvider>
           <PostsProvider>
-          <UserProvider>
-            <ReviewProvider>
-              <SkillProvider>
-                <SearchHolder>
-                  <Header />
-                  <AppRoutes />
-                  <Footer/>
-                </SearchHolder>
-              </SkillProvider>
-            </ReviewProvider>
-          </UserProvider>
+            <UserProvider>
+              <ReviewProvider>
+                <SkillProvider>
+                  <SearchHolder>
+                    <Header />
+                    <AppRoutes />
+                    <Footer />
+                  </SearchHolder>
+                </SkillProvider>
+              </ReviewProvider>
+            </UserProvider>
           </PostsProvider>
         </CurrentUserProvider>
       </div>

@@ -2,7 +2,7 @@ const { DataTypes, Model } = require("sequelize");
 let dbConnect = require("../dbConnect");
 const sequelizeInstance = dbConnect.Sequelize;
 const Users = require("./user")
-
+const Post = require("./post")
 class Chat extends Model { }
 //Sequelize will create this table if it doesn't exist on startup
 Chat.init({
@@ -22,6 +22,14 @@ Chat.init({
         type: DataTypes.INTEGER, allowNull: true, required: false,
         references: {
             model: Users, //reference to another model
+            key: "id", //column name of the referenced model
+            indexes: [{ unique: true }],
+        }
+    },
+    postID: {
+        type: DataTypes.INTEGER, allowNull: true, required: false,
+        references: {
+            model: Post, //reference to another model
             key: "id", //column name of the referenced model
             indexes: [{ unique: true }],
         }

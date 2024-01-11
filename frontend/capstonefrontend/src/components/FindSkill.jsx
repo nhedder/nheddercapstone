@@ -7,23 +7,26 @@ export default function FindSkill(props) {
   const [skillId, setskillId] = useState(null);
   const [count, setCount] = useState(0);
   const [skill, setSkill] = useState(null);
-  const { query, setQuery} = useSearchContext();
+  const { query, setQuery } = useSearchContext();
   const skills = props.skills;
   const skillOptions = skills.map((skill) => ({
     label: skill.skillName.toString(), // Convert the ID to a string
     value: skill.skillName, // Keep the ID as a number
   }));
-  
+
   const getSkillId =
-  skills.length !== 0 && Array.isArray(skills)
-    ? skills.filter((skill) => skill.skillName === query)
-    : null;
-const idSkill= skills.length !== 0 && Array.isArray(skills) && query !== ""?getSkillId[0].id:null
+    skills.length !== 0 && Array.isArray(skills)
+      ? skills.filter((skill) => skill.skillName === query)
+      : null;
+  const idSkill =
+    skills.length !== 0 && Array.isArray(skills) && query !== ""
+      ? getSkillId[0].id
+      : null;
   const skillObj = skills.find((skill) => skill.id === skillId);
 
   return (
     <>
-      <div>{skill ? skillObj.name : "Add a transaction"}</div>
+      <div>{}</div>
       <br />
       <Autocomplete
         disablePortal
@@ -31,7 +34,7 @@ const idSkill= skills.length !== 0 && Array.isArray(skills) && query !== ""?getS
         onChange={(e, selectedOption) => {
           setskillId(selectedOption ? selectedOption.value : null);
           setQuery(selectedOption ? selectedOption.value : null);
-          props.setSkillId(idSkill)
+          props.setSkillId(idSkill);
         }}
         options={skillOptions}
         getOptionLabel={(option) => option.label}

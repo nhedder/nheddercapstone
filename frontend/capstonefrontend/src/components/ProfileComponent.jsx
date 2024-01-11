@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, TextField } from "@mui/material";
-import axios from 'axios'
+import axios from "axios";
 
 export default function ProfileComponent(props) {
   const [firstName, setFirstName] = useState(props.currentUser.firstName);
@@ -9,20 +9,25 @@ export default function ProfileComponent(props) {
   const [vPassword, setVPassword] = useState(props.currentUser.password);
   const [count, setCount] = useState(false);
   const currentUser = props.currentUser;
-  const updateUser = { firstName: firstName, lastName: lastName, password: password };
-  
-  const handleSubmit = ()=>{
-   axios.put("http://localhost:8080/api/users/"+ currentUser.id, updateUser)
-   .then(response=>console.log(response.data)) 
-   .catch(err=>console.log(err))
-  }
+  const updateUser = {
+    firstName: firstName,
+    lastName: lastName,
+    password: password,
+  };
 
-  const handleDelete = ()=>{
-    axios.delete("http://localhost:8080/api/users/"+ currentUser.id)
-    .then(response=>console.log(response.data)) 
-    .catch(err=>console.log(err))
-   }
+  const handleSubmit = () => {
+    axios
+      .put("http://localhost:8080/api/users/" + currentUser.id, updateUser)
+      .then((response) => console.log(response.data))
+      .catch((err) => console.log(err));
+  };
 
+  const handleDelete = () => {
+    axios
+      .delete("http://localhost:8080/api/users/" + currentUser.id)
+      .then((response) => console.log(response.data))
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -71,17 +76,11 @@ export default function ProfileComponent(props) {
                   password === vPassword
                     ? handleSubmit
                     : () => alert("These passwords do not match.")
-                
                 }
               >
                 Update
               </Button>
-              <Button
-                onClick={
-             
-                handleDelete
-                } color="error"
-              >
+              <Button onClick={handleDelete} color="error">
                 Delete Profile
               </Button>
             </form>

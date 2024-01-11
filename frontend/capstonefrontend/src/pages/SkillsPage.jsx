@@ -27,20 +27,16 @@ const SkillsPage = () => {
       <Typography variant="h2" gutterBottom>
         Skills Page
       </Typography>
-     
-        {usersData?.map((user, index) => (
-        //   <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
-            // {console.log(usersData)}
-            <CustomSkillCard
-              title={`${user.firstName} ${user.lastName}`}
-              body={`Email: ${user.emailId}\nSkill: ${
-                user.skill ? user.skill.name : "No Skill"
-              }`}
-              displayPicture={user.displayPicture}
-            />
-        //   </Grid>
-        ))}
-     
+
+      {usersData?.map((user, index) => (
+        <CustomSkillCard
+          title={`${user.firstName} ${user.lastName}`}
+          body={`Email: ${user.emailId}\nSkill: ${
+            user.skill ? user.skill.name : "No Skill"
+          }`}
+          displayPicture={user.displayPicture}
+        />
+      ))}
     </div>
   );
 };

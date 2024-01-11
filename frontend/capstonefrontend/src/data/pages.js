@@ -19,5 +19,13 @@ export const pages = [
     link: "/login",
     label: "Log In",
   },
+  {
+    link: "/signup",
+    label: "Sign Up",
+  },
+  {
+    link: "/profile",
+    label: "Edit Account",
+  },
   
 ];

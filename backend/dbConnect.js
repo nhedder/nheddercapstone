@@ -16,10 +16,12 @@ const sequelize = new Sequelize(
 const connectMysql = async () => {
   try {
     await sequelize.authenticate();
-    console.log(`Successful connection to MySQL Database ${process.env.DB_NAME}`);
-  } 
-  catch (error) {
-    console.error("Unable to connect to MySQL database:", error); process.exit(1);
+    console.log(
+      `Successful connection to MySQL Database ${process.env.DB_NAME}`
+    );
+  } catch (error) {
+    console.error("Unable to connect to MySQL database:", error);
+    process.exit(1);
   }
 };
 

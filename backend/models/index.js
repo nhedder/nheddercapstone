@@ -5,6 +5,7 @@ const Review = require("./review");
 const Skill = require("./skill"); 
 const Trade = require("./trade");
 const Chat = require("./chat"); //require the models
+
 async function init() {
   await Skill.sync(); 
   await User.sync(); 

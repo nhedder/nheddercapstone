@@ -18,20 +18,20 @@ export default function CustomSkillCard({
   children,
   buttonText = "Chat",
 }) {
-const navigate= useNavigate()
-
-
-
+  const navigate = useNavigate();
 
   return (
     <Card sx={{ width: 800 }}>
       <CardActionArea>
-        {displayPicture?<CardMedia
-          component="img"
-          height="150"
-          alt="display pictures"
-          image={displayPicture}
-        />:null}
+        {displayPicture ? (
+          <CardMedia
+            component="img"
+            height="150"
+            alt="display pictures"
+            image={displayPicture}
+            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          />
+        ) : null}
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {title}
@@ -39,17 +39,18 @@ const navigate= useNavigate()
           <Typography variant="body2" color="text.secondary">
             {body}
           </Typography>
-          {/* { userArray[0].rating?
-          <Typography variant="body2" color="text.secondary"sx={{left: 50, position:'absolute', top: 10}}>
-           {filteredUser[0].firstName}  {filteredUser[0].lastName} reviewing  {reviewedUser[0].firstName}  {reviewedUser[0].lastName}
-          </Typography>:
-          <Typography variant="body2" color="text.secondary"sx={{left: 50, position:'absolute', top: 10}}>
-           {filteredUser[0].firstName}  {filteredUser[0].lastName}
-          </Typography>} */}
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button onClick={()=>navigate('chat', {state:{email:filteredUser[0].emailId,id:filteredUser[0].id}})} size="small" color="primary">
+        <Button
+          onClick={() =>
+            navigate("chat", {
+              state: { email: filteredUser[0].emailId, id: filteredUser[0].id },
+            })
+          }
+          size="small"
+          color="primary"
+        >
           {buttonText}
         </Button>
       </CardActions>

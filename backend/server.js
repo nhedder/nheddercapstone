@@ -4,11 +4,11 @@ const app = express();
 require("dotenv").config();
 let dbConnect = require("./dbConnect");
 
-const http = require('http');
+const http = require("http");
 const socketIo = require("./libraries/socket"); // Import the Socket.IO setup function
 
 const corsOptions = {
-  origin: "http://localhost:5173"
+  origin: "http://localhost:5173",
 };
 app.use(cors(corsOptions));
 
@@ -47,5 +47,5 @@ app.listen(PORT, () => {
 });
 
 io.listen(3005, () => {
-  console.log('Socket.IO server is running on port 3001');
+  console.log("Socket.IO server is running on port 3001");
 });

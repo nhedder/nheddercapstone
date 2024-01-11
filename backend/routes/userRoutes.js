@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Controllers.userController.getUser(req,res);
+  Controllers.userController.getUser(req, res);
 });
 
 router.post("/create", (req, res) => {
